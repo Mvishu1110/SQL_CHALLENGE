@@ -2,6 +2,7 @@
 -- The countryCode for America is USA.
 --- Ans:SELECT * FROM city where countrycode="USA" and population>100000;
 
+
 -- Q.2 Query the name field for all American cities in the CITY table with populations larger than 120000. 
 -- The countryCode for America is USA.
 --- Ans:SELECT name FROM city where countrycode="USA" and population>120000;
@@ -10,6 +11,7 @@
 -- Q.3 Query all columns (attributes) for every row in the CITY table. 
 --- Ans:SELECT * FROM city ;
 
+
 -- Q.4 Query all columns for a city in CITY with the id 1661.
 --- Ans:SELECT * from city where id=1661 ;
 
@@ -17,5 +19,12 @@
 -- Q.5 Query all attributes of every Japanese city in the CITY table. The countryCODE for Japan is JPN.
 --- Ans:SELECT * from city where countrycode='JPN' ;
 
+
 -- Q.6 Query the names of all the Japanese cities in the CITY table. The countryCODE for Japan is JPN.
 --- Ans:SELECT name FROM city where countrycode="JPN"
+
+
+-- Q.7 Query a list of CITY and STATE from the station table.
+--- Ans:SELECT city, state FROM  station;
+
+
