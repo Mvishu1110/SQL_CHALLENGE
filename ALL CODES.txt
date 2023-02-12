@@ -40,4 +40,30 @@
 -- Q.10 Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths 
 -- (i.e.: number of characters in the name). If there is more than one smallest or largest city, 
 -- choose the one that comes first when ordered alphabetically.
---- Ans: SELECT min(length(city)) as min_len, max(length(city)) as max_length
+--- Ans: (select city,length(city) as len from station order by length(city), city  limit 1)
+          union 
+         (select city,length(city) as len from station order by length(city)desc,city limit 1);
+         
+         
+-- Q11. Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from station. Your result cannot contain duplicates.
+--- Ans: select DISTINCT city from station where city like'A%' OR CITY LIKE'E%'OR CITY LIKE'I%' OR CITY LIKE'O%'OR CITY LIKE'U%';
+
+
+-- Q12. Query the list of CITY names ending with vowels (a, e, i, o, u) from station. Your result cannot contain duplicates.
+--- Ans: select DISTINCT city from station where city like'%A' OR CITY LIKE'%E'OR CITY LIKE'%I' OR CITY LIKE'%O'OR CITY LIKE'%U';
+
+
+-- Q13. Query the list of CITY names from station that do not start with vowels. Your result cannot contain duplicates.
+--- Ans: select DISTINCT city from station where LEFT(CITY,1) NOT IN('A','E','I','O','U');
+
+
+-- Q14. Query the list of CITY names from station that do not end with vowels. Your result cannot contain duplicates.
+ --- Ans: select DISTINCT city from station where RIGHT(CITY,1) NOT IN('A','E','I','O','U');        
+
+
+-- Q15. Query the list of CITY names from station that either do not start with vowels or do not end with vowels. 
+-- Your result cannot contain duplicates.
+--- Ans: select DISTINCT city from station where (RIGHT(CITY,1) NOT IN('A','E','I','O','U')) 0R (LEFT(CITY,1) NOT IN('A','E','I','O','U'));
+         
+         
+         
